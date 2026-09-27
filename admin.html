@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - NeuraBlog</title>
+    <meta name="description" content="NeuraBlog admin panel to manage users, posts and comments.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Admin Dashboard</h1>
+            <!-- admin check will be added after login is ready -->
+            <p style="color: #d32f2f; font-size:13px;">Note: Admin access check will be enforced once login is built.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Site stats -->
+        <div class="stats-row" id="adminStats">
+            <!-- filled by JS -->
+        </div>
+
+        <!-- Manage Users -->
+        <h2 class="section-title">Manage Users</h2>
+        <div id="usersTableArea" style="margin-bottom:30px; overflow-x:auto;">
+            <!-- filled by JS -->
+        </div>
+
+        <!-- Manage Posts -->
+        <h2 class="section-title">Manage Posts</h2>
+        <div id="postsTableArea" style="margin-bottom:30px; overflow-x:auto;">
+            <!-- filled by JS -->
+        </div>
+
+        <!-- Manage Comments -->
+        <h2 class="section-title">Manage Comments</h2>
+        <div id="commentsTableArea" style="margin-bottom:30px; overflow-x:auto;">
+            <!-- filled by JS -->
+        </div>
+
+        <!-- Contact messages -->
+        <h2 class="section-title">Contact Messages</h2>
+        <div id="contactsTableArea" style="margin-bottom:30px; overflow-x:auto;">
+            <!-- filled by JS -->
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        NeuraBlog - Mini Project, 3rd Semester
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+        showAdminPage();
+    </script>
+
+</body>
+</html>

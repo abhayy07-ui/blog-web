@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NeuraBlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-layout split-screen">
+    <div class="auth-left auth-left-login">
+        <div class="auth-left-overlay"></div>
+        <div class="auth-left-content">
+            <a href="index.html" class="auth-brand-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> 
+                NeuraBlog
+            </a>
+            <h1>Welcome back!</h1>
+            <p>Log in to access your dashboard, connect with others, and continue sharing your AI/ML knowledge.</p>
+        </div>
+    </div>
+    <div class="auth-right">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Login to NeuraBlog</h2>
+                <form id="loginForm" onsubmit="loginUser(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email / Username</label>
+                        <input type="email" id="loginEmail" placeholder="you@example.com">
+                        <span class="form-error" id="loginEmailError"></span>
+                    </div>
+                    <div class="form-group" style="position: relative;">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••">
+                        <span class="form-error" id="loginPasswordError"></span>
+                    </div>
+                    <div class="form-options">
+                        <label class="remember-me"><input type="checkbox"> Remember me</label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary auth-submit">Login</button>
+                </form>
+                <div class="auth-links">
+                    <a href="register.html" class="switch-link">Don't have an account? Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load data first, then auth logic -->
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

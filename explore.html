@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Posts - NeuraBlog</title>
+    <meta name="description" content="Browse and search all AI, ML and data science articles on NeuraBlog.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Explore Posts</h1>
+            <p>Find articles by searching, filtering and sorting.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="explore-layout">
+            <aside class="explore-sidebar">
+                <h3>Categories</h3>
+                <div class="sidebar-categories" id="sidebarCategories">
+                    <!-- filled by JS -->
+                </div>
+            </aside>
+            
+            <main class="explore-main">
+                <!-- Search and filter bar -->
+                <div class="filters">
+                    <div class="filter-group" style="flex: 2; min-width: 180px;">
+                        <input type="text" id="searchInput" placeholder="Search posts..." oninput="applyFilters()">
+                    </div>
+                    <div class="filter-group" style="flex: 1; min-width: 130px;">
+                        <select id="categoryFilter" onchange="applyFilters()">
+                            <option value="">All Categories</option>
+                            <option>Machine Learning</option>
+                            <option>Deep Learning</option>
+                            <option>Data Science</option>
+                            <option>Python Programming</option>
+                            <option>Projects and Tutorials</option>
+                            <option>AI Careers</option>
+                            <option>Responsible AI</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" style="min-width: 120px;">
+                        <select id="sortBy" onchange="applyFilters()">
+                            <option value="latest">Latest</option>
+                            <option value="views">Most Viewed</option>
+                            <option value="likes">Most Liked</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="postCount" class="result-info" style="margin-bottom: 16px; color: var(--text-sec); font-size: 14px;"></div>
+
+                <!-- Posts in 2-column grid layout -->
+                <div class="posts-grid posts-grid-2col" id="explorePostsList">
+                    <!-- filled by JS -->
+                </div>
+
+                <!-- Empty state -->
+                <div id="emptyMsg" style="display:none;">
+                    <div class="empty-state">
+                        <p>No posts found. Try a different search or clear the filters.</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        NeuraBlog 
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+        showExplorePage();
+    </script>
+
+</body>
+</html>

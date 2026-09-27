@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - NeuraBlog</title>
+    <meta name="description" content="About NeuraBlog - a student mini project for sharing AI and ML articles.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-hero { text-align: center; padding: 80px 20px; background: var(--bg-card); border-bottom: 1px solid rgba(0,0,0,0.05); margin-bottom: var(--space-6); }
+        .about-hero h1 { font-size: 48px; margin-bottom: var(--space-3); color: var(--text-main); }
+        .about-hero p { font-size: 20px; color: var(--text-sec); max-width: 700px; margin: 0 auto; line-height: 1.6; }
+        
+        .mission-section { display: flex; gap: var(--space-6); align-items: center; margin-bottom: var(--space-6); }
+        .mission-text { flex: 1; }
+        .mission-text h2 { font-size: 32px; margin-bottom: var(--space-3); }
+        .mission-text p { font-size: 16px; line-height: 1.7; color: var(--text-main); margin-bottom: var(--space-3); }
+        .mission-image { flex: 1; border-radius: var(--rad-card); overflow: hidden; box-shadow: var(--shadow-card); }
+        .mission-image img { width: 100%; height: auto; display: block; }
+        
+        .core-values { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-6); }
+        .value-card { background: var(--bg-card); padding: var(--space-5); border-radius: var(--rad-card); box-shadow: var(--shadow-card); text-align: center; }
+        .value-card h3 { font-size: 20px; margin-bottom: var(--space-2); }
+        .value-card p { font-size: 14px; color: var(--text-sec); }
+        
+        .team-section { text-align: center; margin-bottom: var(--space-6); }
+        .team-section h2 { font-size: 32px; margin-bottom: var(--space-5); }
+        .team-grid { display: flex; justify-content: center; gap: var(--space-5); flex-wrap: wrap; }
+        .team-member { text-align: center; width: 200px; }
+        .team-avatar { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: var(--space-3); border: 4px solid var(--bg-surface); }
+        .team-member h4 { font-size: 18px; margin-bottom: 4px; }
+        .team-member p { font-size: 14px; color: var(--text-sec); }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html" class="active">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <div class="about-hero">
+        <div class="container">
+            <h1>About NeuraBlog</h1>
+            <p>Empowering the next generation of AI and Machine Learning practitioners through shared knowledge and community.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Mission Section -->
+        <div class="mission-section">
+            <div class="mission-text">
+                <h2>Our Mission</h2>
+                <p>NeuraBlog started as a student mini project for a 3rd semester coursework in Web Technology. It has grown into a platform built entirely on HTML, CSS, and Vanilla JavaScript, demonstrating the power of modern frontend development without complex frameworks.</p>
+                <p>Our goal is to create a clean, accessible, and fast static platform where students and enthusiasts can publish articles on Data Science, Deep Learning, and AI Careers.</p>
+            </div>
+            <div class="mission-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team collaborating">
+            </div>
+        </div>
+
+        <!-- Core Values with icon accent circles -->
+        <div class="core-values">
+            <div class="value-card">
+                <div class="sidebar-icon cat-ml" style="width:56px; height:56px; margin: 0 auto var(--space-3);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+                <h3>Learn</h3>
+                <p>Access high-quality articles and tutorials on cutting-edge AI technologies.</p>
+            </div>
+            <div class="value-card">
+                <div class="sidebar-icon cat-pt" style="width:56px; height:56px; margin: 0 auto var(--space-3);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg></div>
+                <h3>Share</h3>
+                <p>Publish your own findings, projects, and insights with a growing community.</p>
+            </div>
+            <div class="value-card">
+                <div class="sidebar-icon cat-ds" style="width:56px; height:56px; margin: 0 auto var(--space-3);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg></div>
+                <h3>Grow</h3>
+                <p>Develop your career and build a portfolio of published technical writing.</p>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="team-section">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&q=80" alt="Sarah Jenkins" class="team-avatar">
+                    <h4>Sarah Jenkins</h4>
+                    <p>Founder & Developer</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Michael Chen" class="team-avatar">
+                    <h4>Michael Chen</h4>
+                    <p>AI Content Lead</p>
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Jessica Alba" class="team-avatar">
+                    <h4>Jessica Alba</h4>
+                    <p>Community Manager</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        NeuraBlog &mdash; Mini Project, 3rd Semester
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+    </script>
+
+</body>
+</html>

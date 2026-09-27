@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - NeuraBlog</title>
+    <meta name="description" content="Contact NeuraBlog - send a message to the team.">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .contact-layout { display: flex; gap: var(--space-6); align-items: flex-start; margin-top: var(--space-4); margin-bottom: var(--space-6); }
+        .contact-form-col { flex: 2; background: var(--bg-card); padding: var(--space-5); border-radius: var(--rad-card); box-shadow: var(--shadow-card); }
+        .contact-info-col { flex: 1; display: flex; flex-direction: column; gap: var(--space-4); }
+        .info-card { background: var(--bg-card); padding: var(--space-4); border-radius: var(--rad-card); box-shadow: var(--shadow-card); display: flex; align-items: center; gap: var(--space-3); }
+        .info-content h3 { font-size: 16px; margin-bottom: 4px; }
+        .info-content p { font-size: 14px; color: var(--text-sec); }
+        @media (max-width: 768px) {
+            .contact-layout { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" class="active">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Send us a message below.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="contact-layout">
+            <!-- Left column: Contact form -->
+            <div class="contact-form-col">
+                <h2 style="font-size: 24px; margin-bottom: var(--space-4);">Send a Message</h2>
+                <div class="form-group">
+                    <label for="contactName">Your Name</label>
+                    <input type="text" id="contactName" placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Your Email</label>
+                    <input type="email" id="contactEmail" placeholder="you@example.com">
+                </div>
+                <div class="form-group">
+                    <label for="contactSubject">Subject</label>
+                    <input type="text" id="contactSubject" placeholder="How can we help?">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" rows="6" placeholder="Write your message here..."></textarea>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; padding: 14px;" onclick="handleContactSubmit()">Send Message</button>
+            </div>
+
+            <!-- Right column: contact info with icons -->
+            <div class="contact-info-col">
+                <div class="info-card">
+                    <div class="sidebar-icon cat-ml" style="width:48px; height:48px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p>hello@neurablog.com</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="sidebar-icon cat-ds" style="width:48px; height:48px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                    <div class="info-content">
+                        <h3>Office</h3>
+                        <p>123 Innovation Drive<br>Tech Park, CA 94043</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="sidebar-icon cat-pt" style="width:48px; height:48px;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        NeuraBlog - Mini Project, 3rd Semester
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+    </script>
+
+</body>
+</html>

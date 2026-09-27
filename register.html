@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - NeuraBlog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-layout split-screen">
+    <div class="auth-left auth-left-register">
+        <div class="auth-left-overlay"></div>
+        <div class="auth-left-content">
+            <a href="index.html" class="auth-brand-light">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> 
+                NeuraBlog
+            </a>
+            <h1>Join our community</h1>
+            <p>Create an account to start sharing your articles, saving your favorite posts, and connecting with AI/ML enthusiasts.</p>
+        </div>
+    </div>
+    <div class="auth-right">
+        <div class="auth-container">
+            <div class="auth-card">
+                <h2>Create Account</h2>
+                <form id="registerForm" onsubmit="registerUser(event)">
+                    <div class="form-group">
+                        <label for="regName">Full Name</label>
+                        <input type="text" id="regName" placeholder="Jane Doe">
+                        <span class="form-error" id="regNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email address</label>
+                        <input type="email" id="regEmail" placeholder="you@example.com">
+                        <span class="form-error" id="regEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password</label>
+                        <input type="password" id="regPassword" placeholder="Min. 6 characters">
+                        <span class="form-error" id="regPasswordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Confirm Password</label>
+                        <input type="password" id="regConfirmPassword" placeholder="••••••••">
+                        <span class="form-error" id="regConfirmPasswordError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary auth-submit">Register</button>
+                </form>
+                <div class="auth-links">
+                    <a href="login.html" class="switch-link">Already have an account? Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Load data first, then auth logic -->
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

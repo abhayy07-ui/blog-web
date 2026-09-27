@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NeuraBlog</title>
+    <meta name="description" content="View your NeuraBlog author dashboard with post stats, views and likes.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Author Dashboard</h1>
+            <p id="dashboardWelcome">Welcome back!</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Stats cards -->
+        <div class="stats-row" id="dashboardStats">
+            <!-- filled by JS -->
+        </div>
+
+        <!-- Create new post button -->
+        <div style="margin-bottom:16px;">
+            <a href="create-post.html" class="btn btn-primary">+ Write New Post</a>
+        </div>
+
+        <!-- My posts table -->
+        <h2 class="section-title">My Posts</h2>
+
+        <div id="myPostsTableArea">
+            <!-- filled by JS -->
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        NeuraBlog - Mini Project, 3rd Semester
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+        showDashboardPage();
+    </script>
+
+</body>
+</html>

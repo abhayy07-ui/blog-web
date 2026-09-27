@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NeuraBlog</title>
+    <meta name="description" content="View and edit your NeuraBlog profile, posts and bookmarks.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>My Profile</h1>
+            <p>View and update your profile information.</p>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Profile info box -->
+        <div class="profile-box" id="profileInfoBox">
+            <!-- filled by JS -->
+        </div>
+
+        <!-- Edit profile form (hidden by default) -->
+        <div id="editBioSection" style="display:none;" class="form-box">
+            <h2 style="font-size:16px; margin-bottom:16px; border-left:3px solid #1a73e8; padding-left:10px; color:#1a1a2e;">Edit Profile</h2>
+            <div class="form-group">
+                <label for="editBio">Bio</label>
+                <textarea id="editBio" rows="3" placeholder="Tell others about yourself..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="editSkills">Skills (comma separated)</label>
+                <input type="text" id="editSkills" placeholder="e.g. Python, TensorFlow, Pandas">
+            </div>
+            <div class="form-group">
+                <label for="editGithub">GitHub URL</label>
+                <input type="text" id="editGithub" placeholder="https://github.com/yourusername">
+            </div>
+            <div class="form-group">
+                <label for="editLinkedin">LinkedIn URL</label>
+                <input type="text" id="editLinkedin" placeholder="https://linkedin.com/in/yourusername">
+            </div>
+            <div style="display:flex; gap:10px;">
+                <button class="btn btn-primary" onclick="saveProfile()">Save Changes</button>
+                <button class="btn btn-secondary" onclick="cancelEditProfile()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" id="tabBtnMyPosts" onclick="switchTab('myPostsTab', this)">My Posts</button>
+            <button class="tab-btn" id="tabBtnBookmarks" onclick="switchTab('bookmarksTab', this)">Bookmarks</button>
+        </div>
+
+        <!-- My Posts tab -->
+        <div id="myPostsTab" class="tab-content active">
+            <div class="posts-grid" id="myPostsList">
+                <!-- filled by JS -->
+            </div>
+            <div id="myPostsEmpty" style="display:none;">
+                <div class="empty-state">
+                    <p>You have not written any posts yet.</p>
+                    <br>
+                    <a href="create-post.html" class="btn btn-primary">Create your first post</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bookmarks tab -->
+        <div id="bookmarksTab" class="tab-content">
+            <div class="posts-grid" id="bookmarksList">
+                <!-- filled by JS -->
+            </div>
+            <div id="bookmarksEmpty" style="display:none;">
+                <div class="empty-state">
+                    <p>You have not bookmarked any posts yet.</p>
+                    <br>
+                    <a href="explore.html" class="btn btn-outline">Browse posts</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        NeuraBlog &mdash; Mini Project, 3rd Semester
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+        showProfilePage();
+    </script>
+
+</body>
+</html>

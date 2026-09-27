@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuraBlog - Share and Learn AI/ML Knowledge</title>
+    <meta name="description" content="NeuraBlog is a student blogging platform to share and read articles about AI, machine learning, data science and Python.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg> NeuraBlog</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="create-post.html">Create Post</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <button class="btn-login" onclick="showLoginMessage()">Login</button>
+        </div>
+    </nav>
+
+    <!-- Hero section with warm decorative shapes -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+
+                <div class="hero-text">
+                    <div class="eyebrow">Learn &middot; Share &middot; Grow</div>
+                    <h1>Share and Learn<br><span>AI/ML Knowledge</span></h1>
+                    <p>Read articles, share your ideas and grow together as a community of learners.</p>
+                    <div class="hero-search">
+                        <input type="text" id="heroSearch" placeholder="Search by title, keyword or tag..." onkeydown="handleHeroSearch(event)">
+                        <button class="btn btn-primary" onclick="goToSearch()">Search</button>
+                    </div>
+                </div>
+
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Workspace with laptop" class="hero-illustration">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Categories -->
+        <div style="margin-bottom: 32px;">
+            <span class="section-title">Browse by Category</span>
+            <div class="categories-scroll" id="categoriesRow" style="margin-top: 14px;">
+                <!-- filled by JS -->
+            </div>
+        </div>
+
+        <!-- Latest posts -->
+        <div style="margin-bottom: 36px;">
+            <div class="section-header">
+                <span class="section-title">Latest Posts</span>
+                <a href="explore.html" class="view-all-link">View All &rarr;</a>
+            </div>
+            <div class="posts-grid" id="recentPosts">
+                <!-- filled by JS -->
+            </div>
+        </div>
+
+        <!-- Most viewed -->
+        <div style="margin-bottom: 36px;">
+            <div class="section-header">
+                <span class="section-title">Most Viewed</span>
+                <a href="explore.html?sort=views" class="view-all-link">View All &rarr;</a>
+            </div>
+            <div class="posts-grid" id="mostViewed">
+                <!-- filled by JS -->
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        NeuraBlog
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        initSampleData();
+        showHomePage();
+    </script>
+
+</body>
+</html>
